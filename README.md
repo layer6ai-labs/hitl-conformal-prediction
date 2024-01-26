@@ -1,6 +1,6 @@
 # README
 
-This is the codebase accompanying the paper ["Conformal Prediction Sets Improve Human Decision Making"](add_link_later). Here we discuss how to generate the datasets of conformal prediction sets used in the paper.
+This is the codebase accompanying the paper ["Conformal Prediction Sets Improve Human Decision Making"](https://arxiv.org/abs/2401.13744). Here we discuss how to generate the datasets of conformal prediction sets used in the paper.
 
 ## Setup
 
@@ -26,6 +26,8 @@ The basic usage is as follows:
 
 where `<dataset>` is the desired dataset. We have implemented `fashion-mnist`, `go-emotions`, `object-net`, and `few-nerd`.
 
+`fashion-mnist`, `go-emotions`, and `few-nerd` will be automatically downloaded when the code is run. `object-net` can be downloaded in its entirety from the original [source](https://objectnet.dev/) and preprocessed as in [this function](https://github.com/layer6ai-labs/hitl-conformal-prediction/blob/master/dataset_utils.py#L330). Since only a small subset is needed for our code, we provide a [link](https://drive.google.com/drive/folders/1Ld3CzbfANHR7zPJGteKaf6qHURlMcheW?usp=drive_link) to download only what is needed, and already pre-processed.
+
 ### Dynamic Updating of Config Values
 
 Dataset and calibration hyperparameters are loaded from the `config.py` file at runtime.
@@ -40,14 +42,14 @@ This can be done multiple times for multiple keys. A full list of config values 
 
 To create a fair comparison between conformal and top-k prediction sets, we ensure their sets have the same coverage on the calibration set. This can be done in two ways:
 1. Default config: Select k of top-k first, and compute alpha as (1 - top_k_coverage) on the calibration set. Then use that alpha for conformal prediction.
-2. Alternative: Pick an alpha value for conformal prediction first, and then select k for topk empirically to match the coverage from conformal prediction. Since k must be an integer, we are not guaranteed to find a value of k which produces a similar alpha. Example command:
+2. Alternative: Pick an alpha value for conformal prediction first, and then select k for top-k empirically to match the coverage from conformal prediction. Since k must be an integer, we are not guaranteed to find a value of k which produces a similar alpha. Example command:
     ```
     python main.py --dataset go-emotions --config alpha=0.05 --config k=None
     ```
 
 ### Run Directories
 
-By default, the `main` command above will create a directory of the form `logs/<date>_<hh>-<mm>-<ss>`, e.g. `Apr26_09-38-37`, to store information about the run, including:
+By default, the `main` command above will create a directory of the form `logs/<date>_<hh>-<mm>-<ss>`, e.g. `Jan24_19-01-22`, to store information about the run, including:
 
 - Config files as `json`
 - Experiment metrics / results as `json`
@@ -55,5 +57,11 @@ By default, the `main` command above will create a directory of the form `logs/<
 - Output csvs containing conformal prediction sets for the test data
 
 ## BibTeX
-
-    To be added
+```
+@article{cresswell2024conformal,
+  title={Conformal Prediction Sets Improve Human Decision Making}, 
+  author={Jesse C. Cresswell and Yi Sui and Bhargava Kumar and Noël Vouitsis},
+  journal={arXiv:2401.13744},
+  year={2024}
+}
+```
