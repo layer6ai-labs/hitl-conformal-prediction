@@ -1,4 +1,15 @@
-# README
+<p align="center">
+<a href="https://layer6.ai/"><img src="https://github.com/layer6ai-labs/DropoutNet/blob/master/logs/logobox.jpg" width="180"></a>
+</p> 
+
+<div align="center">
+<h1>
+<b>
+Conformal Prediction Sets Improve Human Decision Making
+</b>
+</h1>
+<h4>
+</div>
 
 This is the codebase accompanying the paper ["Conformal Prediction Sets Improve Human Decision Making"](https://arxiv.org/abs/2401.13744). Here we discuss how to generate the datasets of conformal prediction sets used in the paper.
 
