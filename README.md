@@ -11,7 +11,7 @@ Conformal Prediction Sets Improve Human Decision Making
 <h4>
 </div>
 
-This is the codebase accompanying the paper ["Conformal Prediction Sets Improve Human Decision Making"](https://arxiv.org/abs/2401.13744). Here we discuss how to generate the datasets of conformal prediction sets used in the paper.
+This is the codebase accompanying the paper ["Conformal Prediction Sets Improve Human Decision Making"](https://arxiv.org/abs/2401.13744), published at ICML 2024. Here we discuss how to generate the datasets of conformal prediction sets used in the paper.
 
 ## Setup
 
@@ -69,10 +69,10 @@ By default, the `main` command above will create a directory of the form `logs/<
 
 ## BibTeX
 ```
-@article{cresswell2024conformal,
+@inproceedings{cresswell2024conformal,
   title={Conformal Prediction Sets Improve Human Decision Making}, 
-  author={Jesse C. Cresswell and Yi Sui and Bhargava Kumar and Noël Vouitsis},
-  journal={arXiv:2401.13744},
+  author={Jesse C. Cresswell, Yi Sui, Bhargava Kumar, Noël Vouitsis},
+  booktitle={International Conference on Machine Learning},
   year={2024}
 }
 ```
